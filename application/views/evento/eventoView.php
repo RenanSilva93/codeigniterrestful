@@ -31,6 +31,7 @@ $this->load->view('templates/header');
                     <th>Bairro</th>
                     <th>Cidade</th>
                     <th>UF</th>
+                    <th>Ver Evento</th>
                 </tr>
             <thead>
             <tbody>
@@ -45,6 +46,7 @@ $this->load->view('templates/header');
                         <td><?php echo $evento['bairro']; ?></td>
                         <td><?php echo $evento['cidade']; ?></td>
                         <td><?php echo $evento['uf']; ?></td>
+                        <td><a href="<?php echo base_url() . 'api/evento/' . $evento['id']; ?>">Ver Evento</a></td>
                     </tr>
     <?php } ?>
             </tbody>

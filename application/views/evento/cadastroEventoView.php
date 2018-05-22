@@ -20,7 +20,7 @@ echo form_open_multipart('api/evento');
 
     <div class="form-inline">
         <label class="col-sm-4" for="descricao">Descrição:</label>
-        <textarea class="form-control col-sm-5" id="descricao" name="descricao" cols="100" rows="5"></textarea>
+        <textarea class="form-control col-sm-5" id="descricao" name="descricao" cols="100" rows="5" required></textarea>
     </div><br>
     
     <div class="form-inline">

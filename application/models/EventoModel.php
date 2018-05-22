@@ -65,5 +65,12 @@ class EventoModel extends CI_Model {
         $resultado = $query->result_array();
         return $resultado;
     }
+    
+    function getEvento($id) {
+        $array = array('id' => $id);
+        $query = $this->db->get_where('evento', $array);
+        $resultado = $query->row();
+        return $resultado;
+    }
 }
 

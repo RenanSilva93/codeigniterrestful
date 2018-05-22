@@ -10,8 +10,14 @@ class Evento extends REST_Controller {
         $this->load->model('EventoModel', 'EventoModel');
     }
     
-    public function index_get() {
-        $this->load->view('evento/cadastroEventoView');
+    public function index_get($id = NULL) {
+        if($id) {
+            $evento = $this->EventoModel->getEvento($id);
+            $data['evento'] = $evento;
+            $this->load->view('evento/verEventoView', $data);
+        } else {
+           $this->load->view('evento/cadastroEventoView'); 
+        } 
     }
     
     public function index_post() {

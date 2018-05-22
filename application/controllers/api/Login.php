@@ -8,11 +8,13 @@ class Login extends REST_Controller {
     function __construct() {
         parent::__construct('login');
         $this->load->model('UsuarioModel', 'UsuarioModel');
+        $this->load->model('EventoModel', 'EventoModel');
     }
     
     public function index_get() {
-        $this->response(array("mensagem" => "O roteamento está funcionando corretamente."), REST_Controller::HTTP_OK);
-        
+        $eventos = $this->EventoModel->getEventos();
+        $data['eventos'] = $eventos;
+        $this->load->view('evento/eventoView', $data);
     }
     
     public function index_post() {

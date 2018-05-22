@@ -19,7 +19,18 @@ class EventoModel extends CI_Model {
             $this->form_validation->set_rules('data', 'Data');
             $this->form_validation->set_rules('hora', 'Hora');
             $this->form_validation->set_rules('cep', 'CEP');
-
+            
+            $this->load->library('upload');
+            $path = 'include/uploads/';
+            if (!is_dir($path)) {
+                mkdir($path, 0777, $recursive = true);
+            }
+            $configUpload['upload_path']   = $path;
+            $configUpload['allowed_types'] = 'jpg|jpeg|png';
+            $this->upload->initialize($configUpload);
+            $this->upload->do_upload('foto');
+            $dados['foto'] = $this->upload->data('file_name'); 
+        
             $cep = $dados['cep'];
             $reg = simplexml_load_file("http://cep.republicavirtual.com.br/web_cep.php?formato=xml&cep=" . $cep);
             

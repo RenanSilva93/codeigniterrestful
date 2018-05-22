@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 $this->load->view('templates/header');
 
-echo form_open('api/evento');
+echo form_open_multipart('api/evento');
 ?>
 
 <script src="<?php echo base_url('include/maskedinput.js') ?>"></script>
@@ -37,6 +37,11 @@ echo form_open('api/evento');
         <label class="col-sm-4" for="cep">CEP:</label>
         <input class="form-control col-sm-5" id="cep" name="cep" type="text" required/>
     </div><br>
+    
+    <div class="form-inline">
+        <label class="col-md-4" for="foto">Foto</label>
+        <input class="form-control col-sm-5" id="foto" name="foto" type="file">
+    </div>
 
     <div class="form-inline">
         <div class="col-sm-2"></div>

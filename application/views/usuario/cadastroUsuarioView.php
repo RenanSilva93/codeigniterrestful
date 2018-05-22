@@ -42,5 +42,3 @@ echo form_open('api/usuario');
 </center>
 <?php echo form_close(); ?>
 
-<?php $this->load->view('templates/footer'); ?>
-

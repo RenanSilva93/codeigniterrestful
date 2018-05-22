@@ -39,4 +39,3 @@ echo form_open('api/login');
 </div>
 
 <?php echo form_close(); ?>
-<?php $this->load->view('templates/footer'); ?>

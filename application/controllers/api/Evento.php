@@ -26,7 +26,7 @@ class Evento extends REST_Controller {
         $response['message'] = $insert['message'];
 
         if ($insert['status']) {
-            //$this->response($response, REST_Controller::HTTP_OK);
+            $this->response($response, REST_Controller::HTTP_OK);
             $eventos = $this->EventoModel->getEventos();
             $data['eventos'] = $eventos;
             $this->load->view('evento/eventoView', $data);

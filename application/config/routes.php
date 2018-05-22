@@ -53,12 +53,13 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 
-$route["api/usuarios"]["get"] = "api/Evento";
-$route["api/usuarios/(:num)"]["get"] = "api/Evento/id/$1";
-$route["api/usuarios"]["post"] = "api/Evento";
-$route["api/usuarios/(:num)"]["put"] = "api/Evento/id/$1";
-$route["api/usuarios/(:num)"]["delete"] = "api/Evento/id/$1";
+$route["api/evento"]["get"] = "api/Evento";
+$route["api/evento/(:num)"]["get"] = "api/Evento/id/$1";
+$route["api/evento"]["post"] = "api/Evento";
 
+$route["api/usuario"]["get"] = "api/Usuario";
+$route["api/usuario/(:num)"]["get"] = "api/Usuario/id/$1";
+$route["api/usuario"]["post"] = "api/Usuario";
 /*
 | -------------------------------------------------------------------------
 | Sample REST API Routes

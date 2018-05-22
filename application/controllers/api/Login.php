@@ -23,8 +23,7 @@ class Login extends REST_Controller {
         $response['message'] = $verificaLogin['message'];
 
         if ($verificaLogin['status']) {
-            //$this->response($response, REST_Controller::HTTP_OK);
-            //$this->load->view('evento/eventoView');
+            $this->response($response, REST_Controller::HTTP_OK);
             $this->index_get();
         } else {
             $this->response($response, REST_Controller::HTTP_BAD_REQUEST);
